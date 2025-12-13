@@ -535,3 +535,17 @@ Frontend en repo separado: https://github.com/raymundo-salazar/shipping-quote-fr
 ```bash
 docker compose down -v --remove-orphans
 ```
+
+## Contacto
+
+Si tienes alguna pregunta o comentario sobre este proyecto, no dudes en contactarme:
+
+- **Nombre:** Raymundo Salazar
+- **Correo electrónico:** [hola@raymundosalazar.dev](mailto:hola@raymundosalazar.dev)
+- **Teléfono:** [+52 818 684 3534](tel:+528186843534)
+- **LinkedIn:** [Raymundo Salazar](https://www.linkedin.com/in/raymundosalazar/)
+- **GitHub:** [raymundo-salazar](https://github.com/raymundo-salazar)
+
+### Nota importante
+
+Este proyecto ha sido desarrollado como parte de una **prueba técnica** y su propósito es demostrar mis habilidades y conocimientos en el desarrollo de aplicaciones web con Symfony, React, Docker y otras tecnologías. Su uso es exclusivo para la evaluación de dicha prueba.
