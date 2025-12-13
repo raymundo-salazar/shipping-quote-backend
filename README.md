@@ -9,7 +9,7 @@ Este backend expone un endpoint para obtener cotizaciones de diferentes paqueter
 
 ---
 
-## 📁 Estructura del Proyecto (Backend)
+##  Estructura del Proyecto (Backend)
 
 Este repo contiene **solo el backend** (API Symfony). Estructura principal:
 
@@ -42,7 +42,7 @@ Este repo contiene **solo el backend** (API Symfony). Estructura principal:
 
 ---
 
-## 🧠 Descripción Funcional
+##  Descripción Funcional
 
 El objetivo del backend es:
 
@@ -62,7 +62,7 @@ El frontend (otro repo) consume este backend y muestra un formulario + tabla de 
 
 ---
 
-## 💰 Sistema de Pricing (muy importante)
+##  Sistema de Pricing (muy importante)
 
 El cálculo de precios está centralizado en `App\Service\PricingService` y se basa en una **jerarquía de reglas por usuario**, en este orden de prioridad (de mayor a menor):
 
@@ -190,7 +190,7 @@ Casos cubiertos:
 
 ---
 
-## 🧩 Diseño de la Integración con Proveedores (sin código específico por proveedor)
+##  Diseño de la Integración con Proveedores (sin código específico por proveedor)
 
 Uno de los objetivos principales de este backend es **poder agregar o cambiar proveedores de envío sin tener que escribir código nuevo por cada uno**.  
 Aunque Estafeta, DHL, UPS y Fedex responden con **formatos diferentes** (JSON anidado, JSON con otras claves, XML, incluso errores 500), el servicio está diseñado para manejar esto de forma **configurable**, no “hardcodeada”.
@@ -313,7 +313,7 @@ De esta forma, agregar un proveedor nuevo implica:
 
 ---
 
-## 🌍 Integración con Proveedores (webhook.site)
+##  Integración con Proveedores (webhook.site)
 
 Los proveedores de envío **no son servicios reales** en este entorno: se simulan usando `webhook.site`.
 
@@ -432,7 +432,7 @@ Content-Type: `application/xml`
 
 ---
 
-## 🔐 Autenticación y Clerk
+##  Autenticación y Clerk
 
 Este backend está diseñado para trabajar con **Clerk** como proveedor de autenticación y gestión de sesiones en el frontend.
 
@@ -451,7 +451,7 @@ En `src/Security/`:
 
 ---
 
-## ⚙️ Variables de Entorno (Backend)
+## Variables de Entorno (Backend)
 
 ```dotenv
 APP_ENV=dev
@@ -473,7 +473,7 @@ PROVIDER_ENDPOINT_UPS=https://webhook.site/544226bf-a7e5-44af-9c04-14857cbef88e
 
 ---
 
-## 🐳 Levantar el Backend con Docker
+##  Levantar el Backend con Docker
 
 ```bash
 git clone https://github.com/raymundo-salazar/shipping-quote-backend.git
@@ -493,7 +493,7 @@ API disponible en: `http://localhost:8000`
 
 ---
 
-## 📡 Endpoint Principal: `/api/quotes`
+##  Endpoint Principal: `/api/quotes`
 
 ```bash
 curl -X POST http://localhost:8000/api/quotes   -H "Content-Type: application/json"   -d '{
@@ -509,7 +509,7 @@ curl -X POST http://localhost:8000/api/quotes   -H "Content-Type: application/js
 
 ---
 
-## 🧪 Pruebas (Backend)
+##  Pruebas (Backend)
 
 ```bash
 docker compose exec php bash
@@ -519,7 +519,7 @@ exit
 
 ---
 
-## 🖥️ Frontend (React + Vite + TailwindCSS)
+##  Frontend (React + Vite + TailwindCSS)
 
 Frontend en repo separado: https://github.com/raymundo-salazar/shipping-quote-frontend
 
@@ -530,7 +530,7 @@ Frontend en repo separado: https://github.com/raymundo-salazar/shipping-quote-fr
 
 ---
 
-## 🧹 Limpieza
+##  Limpieza
 
 ```bash
 docker compose down -v --remove-orphans
