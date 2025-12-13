@@ -325,6 +325,40 @@ Cada proveedor (Estafeta, Fedex, DHL, UPS) tiene:
 
 Symfony, a través de `GenericHttpShippingProvider`, se adapta a cada formato usando la configuración almacenada en la base de datos (`request_config`, `response_config`, `format`).
 
+### Vigencia de los endpoints de webhook.site
+
+Los endpoints de `webhook.site` configurados en las variables de entorno:
+
+- `PROVIDER_ENDPOINT_ESTAFETA`
+- `PROVIDER_ENDPOINT_FEDEX`
+- `PROVIDER_ENDPOINT_DHL`
+- `PROVIDER_ENDPOINT_UPS`
+
+fueron creados el día de hoy `Sábado 13 de diciembre del 2025 a las 15:30 hrs UTC` y, por política de `webhook.site`, tienen una vigencia de 7 días a partir de su creación.
+
+En este caso, estos endpoints solo estarán vigentes hasta:
+
+- `Sábado 20 de diciembre del 2025 a las 15:30 hrs UTC`
+
+Después de esa fecha y hora:
+
+- Las URLs dejarán de ser válidas.
+- Las llamadas desde el backend devolverán errores o no se entregarán al mismo contenido configurado inicialmente.
+
+Si quieres ejecutar este proyecto después de esa fecha, deberás:
+
+1. Crear nuevas URLs en `https://webhook.site/`.
+2. Actualizar las variables de entorno en el archivo `.env`:
+
+   ```dotenv
+   PROVIDER_ENDPOINT_ESTAFETA=https://webhook.site/...
+   PROVIDER_ENDPOINT_FEDEX=https://webhook.site/...
+   PROVIDER_ENDPOINT_DHL=https://webhook.site/...
+   PROVIDER_ENDPOINT_UPS=https://webhook.site/...
+  ```
+
+3. Es necesario, ejecutar las migraciones o actualizar la configuración de los proveedores en la base de datos.
+
 ### Variables de entorno de endpoints
 
 En el `.env` del backend:
