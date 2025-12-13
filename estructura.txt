@@ -1,0 +1,203 @@
+.
+├── .env
+├── .env.dev
+├── .env.test
+├── .gitignore
+├── .php-cs-fixer.cache
+├── .php-cs-fixer.dist.php
+├── .php-cs-fixer.php
+├── .phpunit.cache
+│   └── test-results
+├── .vscode
+│   ├── launch.json
+│   └── settings.json
+├── bin
+│   ├── console
+│   └── phpunit
+├── compose.override.yaml
+├── composer.json
+├── composer.lock
+├── config
+│   ├── bundles.php
+│   ├── packages
+│   │   ├── api_platform.yaml
+│   │   ├── cache.yaml
+│   │   ├── debug.yaml
+│   │   ├── doctrine.yaml
+│   │   ├── doctrine_migrations.yaml
+│   │   ├── framework.yaml
+│   │   ├── monolog.yaml
+│   │   ├── nelmio_cors.yaml
+│   │   ├── routing.yaml
+│   │   ├── security.yaml
+│   │   ├── test
+│   │   │   └── framework.yaml
+│   │   ├── twig.yaml
+│   │   ├── uid.yaml
+│   │   ├── validator.yaml
+│   │   └── web_profiler.yaml
+│   ├── preload.php
+│   ├── routes
+│   │   ├── api_platform.yaml
+│   │   ├── framework.yaml
+│   │   ├── security.yaml
+│   │   └── web_profiler.yaml
+│   ├── routes.yaml
+│   ├── services.yaml
+│   └── services_test.yaml
+├── docker
+│   └── api
+│       ├── Dockerfile
+│       ├── nginx.conf
+│       ├── php.ini
+│       └── start.sh
+├── docker-compose.yml
+├── estructura.txt
+├── migrations
+│   ├── .gitignore
+│   ├── Version20251213141125.php
+│   ├── Version20251213151418.php
+│   └── Version20251213174339.php
+├── phpstan.neon
+├── phpunit.dist.xml
+├── public
+│   ├── bundles
+│   │   └── apiplatform
+│   │       ├── es6-promise
+│   │       │   └── es6-promise.auto.min.js
+│   │       ├── fetch
+│   │       │   └── fetch.js
+│   │       ├── fonts
+│   │       │   └── open-sans
+│   │       │       ├── 400.css
+│   │       │       ├── 700.css
+│   │       │       └── files
+│   │       │           ├── open-sans-cyrillic-400-normal.woff
+│   │       │           ├── open-sans-cyrillic-400-normal.woff2
+│   │       │           ├── open-sans-cyrillic-700-normal.woff
+│   │       │           ├── open-sans-cyrillic-700-normal.woff2
+│   │       │           ├── open-sans-cyrillic-ext-400-normal.woff
+│   │       │           ├── open-sans-cyrillic-ext-400-normal.woff2
+│   │       │           ├── open-sans-cyrillic-ext-700-normal.woff
+│   │       │           ├── open-sans-cyrillic-ext-700-normal.woff2
+│   │       │           ├── open-sans-greek-400-normal.woff
+│   │       │           ├── open-sans-greek-400-normal.woff2
+│   │       │           ├── open-sans-greek-700-normal.woff
+│   │       │           ├── open-sans-greek-700-normal.woff2
+│   │       │           ├── open-sans-greek-ext-400-normal.woff
+│   │       │           ├── open-sans-greek-ext-400-normal.woff2
+│   │       │           ├── open-sans-greek-ext-700-normal.woff
+│   │       │           ├── open-sans-greek-ext-700-normal.woff2
+│   │       │           ├── open-sans-hebrew-400-normal.woff
+│   │       │           ├── open-sans-hebrew-400-normal.woff2
+│   │       │           ├── open-sans-hebrew-700-normal.woff
+│   │       │           ├── open-sans-hebrew-700-normal.woff2
+│   │       │           ├── open-sans-latin-400-normal.woff
+│   │       │           ├── open-sans-latin-400-normal.woff2
+│   │       │           ├── open-sans-latin-700-normal.woff
+│   │       │           ├── open-sans-latin-700-normal.woff2
+│   │       │           ├── open-sans-latin-ext-400-normal.woff
+│   │       │           ├── open-sans-latin-ext-400-normal.woff2
+│   │       │           ├── open-sans-latin-ext-700-normal.woff
+│   │       │           ├── open-sans-latin-ext-700-normal.woff2
+│   │       │           ├── open-sans-math-400-normal.woff
+│   │       │           ├── open-sans-math-400-normal.woff2
+│   │       │           ├── open-sans-math-700-normal.woff
+│   │       │           ├── open-sans-math-700-normal.woff2
+│   │       │           ├── open-sans-symbols-400-normal.woff
+│   │       │           ├── open-sans-symbols-400-normal.woff2
+│   │       │           ├── open-sans-symbols-700-normal.woff
+│   │       │           ├── open-sans-symbols-700-normal.woff2
+│   │       │           ├── open-sans-vietnamese-400-normal.woff
+│   │       │           ├── open-sans-vietnamese-400-normal.woff2
+│   │       │           ├── open-sans-vietnamese-700-normal.woff
+│   │       │           └── open-sans-vietnamese-700-normal.woff2
+│   │       ├── graphiql
+│   │       │   ├── graphiql.css
+│   │       │   └── graphiql.min.js
+│   │       ├── graphiql-style.css
+│   │       ├── init-common-ui.js
+│   │       ├── init-graphiql.js
+│   │       ├── init-redoc-ui.js
+│   │       ├── init-swagger-ui.js
+│   │       ├── logo-header.svg
+│   │       ├── react
+│   │       │   ├── react-dom.production.min.js
+│   │       │   └── react.production.min.js
+│   │       ├── redoc
+│   │       │   └── redoc.standalone.js
+│   │       ├── style.css
+│   │       ├── swagger-ui
+│   │       │   ├── oauth2-redirect.html
+│   │       │   ├── swagger-ui-bundle.js
+│   │       │   ├── swagger-ui-standalone-preset.js
+│   │       │   ├── swagger-ui.css
+│   │       │   └── swagger-ui.css.map
+│   │       ├── web.png
+│   │       └── webby.png
+│   └── index.php
+├── src
+│   ├── Api
+│   │   └── Exception
+│   │       ├── ApiException.php
+│   │       ├── AuthException.php
+│   │       ├── BadRequestException.php
+│   │       ├── MethodNotAllowedApiException.php
+│   │       ├── MissingParamsException.php
+│   │       └── NotFoundException.php
+│   ├── ApiResource
+│   │   └── .gitignore
+│   ├── Controller
+│   │   ├── .gitignore
+│   │   ├── Api
+│   │   │   └── ApiController.php
+│   │   ├── QuotesController.php
+│   │   ├── ShippingProvidersController.php
+│   │   └── UsersController.php
+│   ├── DataFixtures
+│   │   ├── PricingRulesFixtures.php
+│   │   ├── ShippingProviderFixtures.php
+│   │   └── UserFixtures.php
+│   ├── Entity
+│   │   ├── .gitignore
+│   │   ├── ShippingProvider.php
+│   │   ├── User.php
+│   │   ├── UserGlobalPricingRule.php
+│   │   ├── UserProviderPricingRule.php
+│   │   └── UserServicePricingOverride.php
+│   ├── EventSubscriber
+│   │   ├── ApiExceptionSubscriber.php
+│   │   └── ApiViewSubscriber.php
+│   ├── Http
+│   ├── Kernel.php
+│   ├── Repository
+│   │   ├── .gitignore
+│   │   ├── ShippingProviderRepository.php
+│   │   ├── UserGlobalPricingRuleRepository.php
+│   │   ├── UserProviderPricingRuleRepository.php
+│   │   ├── UserRepository.php
+│   │   └── UserServicePricingOverrideRepository.php
+│   ├── Security
+│   │   ├── ClerkAuthenticator.php
+│   │   └── ClerkJwtDecoder.php
+│   ├── Service
+│   │   ├── PricingService.php
+│   │   ├── QuoteService.php
+│   │   └── Shipping
+│   │       ├── GenericHttpShippingProvider.php
+│   │       ├── ShippingProviderFactory.php
+│   │       └── ShippingProviderInterface.php
+│   └── Test
+│       └── QuoteServiceIntegrationHelper.php
+├── symfony.lock
+├── templates
+│   └── base.html.twig
+├── tests
+│   ├── Service
+│   │   ├── PricingServiceTest.php
+│   │   └── Shipping
+│   │       └── GenericHttpShippingProviderTest.php
+│   └── bootstrap.php
+└── users.md
+
+42 directories, 159 files
