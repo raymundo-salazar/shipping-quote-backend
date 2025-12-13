@@ -1,0 +1,24 @@
+# config/services_test.yaml
+
+services:
+  # Hacemos estos servicios públicos para poder usarlos en el helper
+  Doctrine\ORM\EntityManagerInterface:
+    public: true
+
+  App\Service\PricingService:
+    public: true
+
+  App\Service\Shipping\ShippingProviderFactory:
+    public: true
+
+  App\Service\QuoteService:
+    public: true
+
+  # Nuestro helper de integración para tests
+  App\Test\QuoteServiceIntegrationHelper:
+    public: true
+    arguments:
+      - '@Doctrine\ORM\EntityManagerInterface'
+      - '@App\Service\QuoteService'
+      - '@App\Service\Shipping\ShippingProviderFactory'
+      - '@App\Service\PricingService'

@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:16
+    container_name: shipping_api_db
+    environment:
+      POSTGRES_DB: shipping_dev
+      POSTGRES_USER: shipping
+      POSTGRES_PASSWORD: shipping
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    container_name: shipping_api_app
+    depends_on:
+      - db
+    environment:
+      APP_ENV: dev
+      # Dev local (Docker network)
+      DATABASE_URL: "postgresql://shipping:shipping@db:5432/shipping_dev?serverVersion=16&charset=utf8"
+      # Para que Symfony vea que está en entorno dev detrás de reverse proxy (si aplica)
+      TRUSTED_PROXIES: "127.0.0.1,REMOTE_ADDR"
+      TRUSTED_HOSTS: "^localhost$"
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+
+###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+
+volumes:
+  db_data:
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###
