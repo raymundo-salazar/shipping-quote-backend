@@ -21,8 +21,8 @@ class GenericHttpShippingProviderTest extends TestCase
             'method' => 'POST',
             'headers' => ['Content-Type' => 'application/json'],
             'body' => [
-                'origin' => '{originZipcode}',
-                'destination' => '{destinationZipcode}',
+                'origin' => '{originZipCode}',
+                'destination' => '{destinationZipCode}',
                 'package' => [
                     'weight' => '{packageWeight}',
                     'dimensions' => [
@@ -101,8 +101,8 @@ class GenericHttpShippingProviderTest extends TestCase
 <?xml version="1.0"?>
 <RatingServiceSelectionRequest>
     <Shipment>
-        <Shipper><Address><PostalCode>{originZipcode}</PostalCode></Address></Shipper>
-        <ShipTo><Address><PostalCode>{destinationZipcode}</PostalCode></Address></ShipTo>
+        <Shipper><Address><PostalCode>{originZipCode}</PostalCode></Address></Shipper>
+        <ShipTo><Address><PostalCode>{destinationZipCode}</PostalCode></Address></ShipTo>
         <Package>
             <PackagingType><Code>02</Code></PackagingType>
             <PackageWeight><Weight>{packageWeight}</Weight></PackageWeight>

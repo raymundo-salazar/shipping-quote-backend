@@ -16,8 +16,8 @@ interface ShippingProviderInterface
      * }>
      */
     public function getQuote(
-        string $originZipcode,
-        string $destinationZipcode,
+        string $originZipCode,
+        string $destinationZipCode,
         array $packageDimensions
     ): array;
 }

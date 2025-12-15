@@ -23,8 +23,8 @@ class QuoteService
      * @return array<int, array<string, mixed>>
      */
     public function getQuotes(
-        string $originZipcode,
-        string $destinationZipcode,
+        string $originZipCode,
+        string $destinationZipCode,
         array $packageDimensions,
         ?User $user,
         int $providerId
@@ -38,8 +38,8 @@ class QuoteService
                 $provider = $this->providerFactory->create($providerEntity);
 
                 $services = $provider->getQuote(
-                    originZipcode: $originZipcode,
-                    destinationZipcode: $destinationZipcode,
+                    originZipCode: $originZipCode,
+                    destinationZipCode: $destinationZipCode,
                     packageDimensions: $packageDimensions
                 );
 
@@ -70,12 +70,12 @@ class QuoteService
 
                     $quotes[] = [
                         'provider' => $providerEntity->getName(),
-                        'provider_id' => $providerEntity->getId(),
+                        'providerId' => $providerEntity->getId(),
                         'service' => $service['service_name'],
-                        'service_code' => $service['service_code'] ?? null,
-                        'base_price' => $service['base_price'],
-                        'markup_percentage' => $pricing['markup_percentage'],
-                        'final_price' => $pricing['final_price'],
+                        'serviceCode' => $service['service_code'] ?? null,
+                        'basePrice' => $service['base_price'],
+                        'markupPercentage' => $pricing['markup_percentage'],
+                        'finalPrice' => $pricing['final_price'],
                         'currency' => $service['currency'] ?? 'MXN',
                     ];
                 }

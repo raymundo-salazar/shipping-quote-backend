@@ -16,8 +16,8 @@ class GenericHttpShippingProvider implements ShippingProviderInterface
      * @param array{weight: float, length: float, width: float, height: float} $packageDimensions
      */
     public function getQuote(
-        string $originZipcode,
-        string $destinationZipcode,
+        string $originZipCode,
+        string $destinationZipCode,
         array $packageDimensions
     ): array {
         $requestConfig = $this->provider->getRequestConfig();
@@ -34,16 +34,16 @@ class GenericHttpShippingProvider implements ShippingProviderInterface
         if ($format === 'xml') {
             $xmlBody = $this->buildXmlBody(
                 $requestConfig,
-                $originZipcode,
-                $destinationZipcode,
+                $originZipCode,
+                $destinationZipCode,
                 $packageDimensions
             );
             $options['body'] = $xmlBody;
         } else {
             $body = $this->buildRequestBody(
                 $requestConfig,
-                $originZipcode,
-                $destinationZipcode,
+                $originZipCode,
+                $destinationZipCode,
                 $packageDimensions
             );
             $options['json'] = $body;
@@ -83,8 +83,8 @@ class GenericHttpShippingProvider implements ShippingProviderInterface
         $bodyTemplate = $requestConfig['body'] ?? [];
 
         return $this->replacePlaceholders($bodyTemplate, [
-            'originZipcode' => $origin,
-            'destinationZipcode' => $destination,
+            'originZipCode' => $origin,
+            'destinationZipCode' => $destination,
             'packageWeight' => $packageDimensions['weight'],
             'packageLength' => $packageDimensions['length'],
             'packageWidth' => $packageDimensions['width'],
@@ -107,8 +107,8 @@ class GenericHttpShippingProvider implements ShippingProviderInterface
         $template = $requestConfig['xml_template'] ?? '';
 
         $replacements = [
-            '{originZipcode}' => $origin,
-            '{destinationZipcode}' => $destination,
+            '{originZipCode}' => $origin,
+            '{destinationZipCode}' => $destination,
             '{packageWeight}' => (string) $packageDimensions['weight'],
             '{packageLength}' => (string) $packageDimensions['length'],
             '{packageWidth}' => (string) $packageDimensions['width'],

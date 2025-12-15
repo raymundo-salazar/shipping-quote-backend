@@ -28,13 +28,13 @@ class QuotesController extends AbstractController
         }
 
         // Validar parámetros requeridos
-        $originZipcode = $data['originZipcode'] ?? null;
-        $destinationZipcode = $data['destinationZipcode'] ?? null;
+        $originZipCode = $data['originZipCode'] ?? null;
+        $destinationZipCode = $data['destinationZipCode'] ?? null;
         $packageDimensions = $data['packageDimensions'] ?? null;
         $providerId = $data['providerId'] ?? null;
 
-        if (!$originZipcode || !$destinationZipcode || !$packageDimensions || !$providerId) {
-            throw new MissingParamsException(['originZipcode', 'destinationZipcode', 'packageDimensions', 'providerId']);
+        if (!$originZipCode || !$destinationZipCode || !$packageDimensions || !$providerId) {
+            throw new MissingParamsException(['originZipCode', 'destinationZipCode', 'packageDimensions', 'providerId']);
         }
 
         // Validar dimensiones del paquete
@@ -52,8 +52,8 @@ class QuotesController extends AbstractController
 
         // Obtener cotizaciones
         $quotes = $this->quoteService->getQuotes(
-            originZipcode: $originZipcode,
-            destinationZipcode: $destinationZipcode,
+            originZipCode: $originZipCode,
+            destinationZipCode: $destinationZipCode,
             packageDimensions: [
                 'weight' => (float) $packageDimensions['weight'],
                 'length' => (float) $packageDimensions['length'],

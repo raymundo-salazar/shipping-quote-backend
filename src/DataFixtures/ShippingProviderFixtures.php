@@ -34,8 +34,8 @@ class ShippingProviderFixtures extends Fixture
                     'Content-Type' => 'application/json',
                 ],
                 'body' => [
-                    'origin_zip' => '{originZipcode}',
-                    'destination_zip' => '{destinationZipcode}',
+                    'origin_zip' => '{originZipCode}',
+                    'destination_zip' => '{destinationZipCode}',
                     'package' => [
                         'weight_kg' => '{packageWeight}',
                         'dimensions_cm' => [
@@ -72,8 +72,8 @@ class ShippingProviderFixtures extends Fixture
                     'Content-Type' => 'application/json',
                 ],
                 'body' => [
-                    'from' => '{originZipcode}',
-                    'to' => '{destinationZipcode}',
+                    'from' => '{originZipCode}',
+                    'to' => '{destinationZipCode}',
                     'weight' => '{packageWeight}',
                     'length' => '{packageLength}',
                     'width' => '{packageWidth}',
@@ -107,10 +107,10 @@ class ShippingProviderFixtures extends Fixture
                 ],
                 'body' => [
                     'source' => [
-                        'zip' => '{originZipcode}',
+                        'zip' => '{originZipCode}',
                     ],
                     'target' => [
-                        'zip' => '{destinationZipcode}',
+                        'zip' => '{destinationZipCode}',
                     ],
                     'parcel' => [
                         'kg' => '{packageWeight}',
@@ -150,8 +150,8 @@ class ShippingProviderFixtures extends Fixture
                 ],
                 'xml_template' => <<<XML
 <RateRequest>
-  <ShipperPostalCode>{originZipcode}</ShipperPostalCode>
-  <RecipientPostalCode>{destinationZipcode}</RecipientPostalCode>
+  <ShipperPostalCode>{originZipCode}</ShipperPostalCode>
+  <RecipientPostalCode>{destinationZipCode}</RecipientPostalCode>
   <Package>
     <Weight>{packageWeight}</Weight>
     <Length>{packageLength}</Length>
